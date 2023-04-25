@@ -9,7 +9,8 @@ export default function AddBook(){
     const [author, setAuthor] = useState("");
     const [description, setDescription] = useState("");
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
         axios.post(`${serverUrl}`, {
             title,
             author,
