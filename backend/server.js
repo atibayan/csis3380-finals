@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -8,8 +9,8 @@ app.use(express.json());
 const port = process.env.PORT || 5000;
 
 
-const uri = `mongodb://localhost:27017/300367726-mia`
-mongoose.connect(uri)
+const uri = process.env.mongodb_repo
+mongoose.connect(uri).then(()=> console.log(`Successfully connected to database`))
 
 const booklistSchema = new mongoose.Schema({
     title: {type: String, required: true},
