@@ -19,7 +19,7 @@ export default function AddBook(){
                 setTitle("");
                 setAuthor("");
                 setDescription("");
-                redirect('/')
+//                 redirect('/')
             }
         })
     }
